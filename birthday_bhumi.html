@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bhumi</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff7eb3,#ff758c);overflow:hidden}
+.page{display:none;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:20px;color:#fff}
+.active{display:flex;flex-direction:column}
+.card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:25px;border-radius:20px;max-width:600px}
+button{padding:12px 20px;border:none;border-radius:30px;font-size:16px;cursor:pointer}
+.heart{position:fixed;color:#fff;animation:float 8s linear infinite}
+@keyframes float{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
+</style>
+</head>
+<body>
+<div id="p1" class="page active">
+<div class="card">
+<h1>Hey Bhumi 💖</h1>
+<p>Someone special has a birthday today...</p>
+<p>This little surprise was made by Dhruv.</p>
+<button onclick="showPage(2)">Open Surprise 🎁</button>
+</div>
+</div>
+
+<div id="p2" class="page">
+<div class="card">
+<h2>Things that make you special 🌸</h2>
+<p>Your smile makes ordinary days better.</p>
+<p>You make people happy just by being yourself.</p>
+<p>The world became brighter the day you were born.</p>
+<button onclick="showPage(3)">One Last Thing 💌</button>
+</div>
+</div>
+
+<div id="p3" class="page">
+<div class="card">
+<h1>🎂 Happy Birthday Bhumi 🎂</h1>
+<p>Wishing you happiness, success, laughter and beautiful memories.</p>
+<p>Out of all the people I've met, you're one of the few who can make me smile without even trying. ❤️</p>
+<p>— Dhruv</p>
+</div>
+</div>
+
+<script>
+function showPage(n){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('p'+n).classList.add('active');
+}
+setInterval(()=>{
+ let h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='❤';
+ h.style.left=Math.random()*100+'vw';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+},500);
+</script>
+</body>
+</html>
